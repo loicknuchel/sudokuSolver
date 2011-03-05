@@ -1,0 +1,72 @@
+# Project: sudoku
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = calcul.o case.o check.o commandes.o create.o display.o my_stdfonc.o main.o resolution.o saveload.o sudoku.o sudoku_enregistres.o my_help.o config.o my_string.o $(RES)
+LINKOBJ  = calcul.o case.o check.o commandes.o create.o display.o my_stdfonc.o main.o resolution.o saveload.o sudoku.o sudoku_enregistres.o my_help.o config.o my_string.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib"  
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = sudoku.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before sudoku.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "sudoku.exe" $(LIBS)
+
+calcul.o: calcul.c
+	$(CC) -c calcul.c -o calcul.o $(CFLAGS)
+
+case.o: case.c
+	$(CC) -c case.c -o case.o $(CFLAGS)
+
+check.o: check.c
+	$(CC) -c check.c -o check.o $(CFLAGS)
+
+commandes.o: commandes.c
+	$(CC) -c commandes.c -o commandes.o $(CFLAGS)
+
+create.o: create.c
+	$(CC) -c create.c -o create.o $(CFLAGS)
+
+display.o: display.c
+	$(CC) -c display.c -o display.o $(CFLAGS)
+
+my_stdfonc.o: my_stdfonc.c
+	$(CC) -c my_stdfonc.c -o my_stdfonc.o $(CFLAGS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+resolution.o: resolution.c
+	$(CC) -c resolution.c -o resolution.o $(CFLAGS)
+
+saveload.o: saveload.c
+	$(CC) -c saveload.c -o saveload.o $(CFLAGS)
+
+sudoku.o: sudoku.c
+	$(CC) -c sudoku.c -o sudoku.o $(CFLAGS)
+
+sudoku_enregistres.o: sudoku_enregistres.c
+	$(CC) -c sudoku_enregistres.c -o sudoku_enregistres.o $(CFLAGS)
+
+my_help.o: my_help.c
+	$(CC) -c my_help.c -o my_help.o $(CFLAGS)
+
+config.o: config.c
+	$(CC) -c config.c -o config.o $(CFLAGS)
+
+my_string.o: my_string.c
+	$(CC) -c my_string.c -o my_string.o $(CFLAGS)

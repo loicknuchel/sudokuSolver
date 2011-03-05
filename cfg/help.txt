@@ -1,0 +1,129 @@
+saisie
+saisie
+Permet a l'utilisateur de saisir un sudoku
+Permet a l'utilisateur de saisir un sudoku.
+La saisie se fait ligne par ligne sans mettre d'espace entre les valeurs. Les valeurs vides sont representees par des 0. S'il reste que des cases vides, la ligne est automatiquement completee.
+@
+create
+create [<niveau>]
+Cree un sudoku.
+Cree un sudoku en fonction du niveau demande (entre 1 et 10).
+@
+liste
+liste
+Liste les numeros des sudokus enregistres dans le fichier de sauvegarde.
+Liste les numeros des sudokus enregistres dans le fichier de sauvegarde.
+@
+load
+load <numero>
+Charge le sudoku de numero demande a partir du fichier de sauvegarde.
+Charge le sudoku de numero demande a partir du fichier de sauvegarde.
+@
+save
+save <numero>
+Sauvegarde le sudoku courrant.
+Sauvegarde le sudoku courrant dans le fichier de sauvegarde avec le numero indique
+ATTENTION, Le numero ne doit pas deja exister !
+@
+pop
+pop <numero>
+Charge le sudoku courant avec le sudoku stoke au numero indique (1 a 9).
+Charge le sudoku courant avec le sudoku stoke au numero indique (1 a 9).
+@
+push
+push <numero>
+Stoke le sudoku courant dans un emplacement de stockage (de 1 a 9).
+Stoke le sudoku courant dans un emplacement de stockage (de 1 a 9).
+@
+r
+r [<niveau>]
+Resout le sudoku courant avec le niveau de difficulte demande (<10). (le niveau max par defaut).
+Resout le sudoku courant avec le niveau de difficulte demande (1, 2, 3 ou 4). (le niveau max par defaut).
+@
+rall
+rall
+Resout le sudoku courant en faisant des hypotheses sur les cases non trouvees.
+Resout le sudoku courant en faisant des hypotheses sur les cases non trouvees.
+@
+ds
+ds [<numero>] | [-a]
+(display sudoku) Affiche le/les sudokus indiques dans complement
+(display sudoku) Affiche le/les sudokus indiques dans complement
+	- complement vide : sudoku courant
+	- complement de 1 a 9 : sudoku stocke de numero correspondant
+	- complement "-a" : le sudoku courant et tous les sudokus stockes
+@
+dp
+dp [<numero1>] [<numero2>]
+(display possibilitees) Affiche les possibilites restantes pour tous les chiffres non trouves du sudoku courant.
+(display possibilitees) Affiche les possibilites restantes pour tous les chiffres non trouves.
+Il est possible de les afficher pour tout le sudoku ou pour un sous ensemble :
+	- dp : pour tout le sudoku
+	- dp <numero1> : pour le carre correspondant au numero
+	- dp <numero1> 0 : pour le ligne correspondante au numero
+	- dp 0 <numero2> : pour le colonne correspondante au numero
+	- dp <numero1> <numero2> : pour la case correspondant aux numeros
+@
+check
+check
+Verifie la coherence du sudoku courant.
+Verifie que le sudoku courant est correct.
+Pas d'incoherences : lignes, colonnes et carres.
+@
+cmp
+cmp <numero1> [<numero2>]
+Compare et affiche les differences/ressemblances des sudoku stokes en numero1 et numero2. Si numero2 n'est pas renseigne, on prend su sudoku courant.
+Compare et affiche les differences/ressemblances des sudoku stokes en numero1 et numero2. Si numero2 n'est pas renseigne, on prend su sudoku courant.
+@
+add
+add <ligne> <colonne> <numero>
+Charge le numero donne a la ligne et colonne indiquee (attention, pas de verification du sudoku !).
+Charge le numero donne a la ligne et colonne indiquee (attention, pas de verification du sudoku !).
+@
+rm
+rm <ligne> <colonne>
+(remove) Supprime le numero a la ligne et colonne indiquee. Initialise aussi toutes les possibilites.
+(remove) Supprime le numero a la ligne et colonne indiquee. Initialise aussi toutes les possibilites.
+@
+rmp
+rmp <ligne> <colonne> <numero>
+(remove possibilite) Supprime de possibilite de numero indique dans la case indiquee.
+(remove possibilite) Supprime de possibilite de numero indique dans la case indiquee.
+@
+init
+init
+Reinitialise le sudoku courant.
+Reinitialise le sudoku courant.
+Lorsqu'il a ete charge par "load" ou "charge".
+@
+clear
+clear [-a]
+Met a 0 le sudoku courant. Si "-a" est precise, l'ensemble des sudokus stockes est aussi mis a 0.
+Met a 0 le sudoku courant. Si "-a" est precise, l'ensemble des sudokus stockes est aussi mis a 0.
+@
+suppr
+suppr <numero>
+Supprime le sudoku sauvegarde de numero indique.
+Supprime la sudoku de numero indique dans le fichier de sauvegarde.
+@
+help
+help [<commande>]
+Cette commande presente les commandes disponibles et leurs effets. Pour plus de precision, precisez ne nom de la commande apres le mot help.
+Cette commande presente les commandes disponibles et leurs effets. Pour plus de precision, precisez ne nom de la commande apres le mot help.
+@
+cfg
+cfg
+Permet de modifier la configurtion du programme.
+Permet de modifier la configurtion du programme. Par exemple les couleurs.
+@
+edit
+edit <composant>
+Edit la composante du progamme demandee.
+Edit la composante du progamme demandee. Par exemple le help ou autre.
+@
+exit
+exit
+Quitte le programme.
+Sauve l'etat courant du programme (sudoku stokes, etc)
+Puis quitte le programme
+@
